@@ -12,6 +12,7 @@ logstash:
     - ./logstash/resources:/etc/logstash/resources
   ports:
     - "5000:5000"
+    - "4321:4321"
   links:
     - elasticsearch
 kibana:
