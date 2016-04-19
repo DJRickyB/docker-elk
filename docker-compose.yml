@@ -5,10 +5,11 @@ elasticsearch:
     - "9200:9200"
     - "9300:9300"
 logstash:
-  image: logstash:latest
+  build: logstash/
   command: logstash -f /etc/logstash/conf.d/logstash.conf
   volumes:
     - ./logstash/config:/etc/logstash/conf.d
+    - ./logstash/resources:/etc/logstash/resources
   ports:
     - "5000:5000"
   links:
